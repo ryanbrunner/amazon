@@ -1,9 +1,11 @@
-<ul>
-  <% @books.each do |book| %>
-    <li>
-      <%= link_to book.title, book_path(book.id) %>
-    </li>
-  <% end %>
-</ul>
+<% if @books.present? %>
+  <ul>
+    <%= render @books %>
+  </ul>
+<% else %>
+  <h2>Add your first book</h2>
+  <%= render('form', {book: Book.new})%>
+<% end %>
+
 
 <%= link_to "Add a book", new_book_path %>
