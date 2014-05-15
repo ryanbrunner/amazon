@@ -2,7 +2,12 @@ Amazon::Application.routes.draw do
 
   resources :dvds
 
-  resources :books
+  resources :books do
+    member do
+      get :purchase
+      post :purchase
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

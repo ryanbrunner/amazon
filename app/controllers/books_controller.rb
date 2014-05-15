@@ -15,6 +15,14 @@ class BooksController < ApplicationController
     @book = Book.new
   end
 
+  def purchase
+    @book = Book.find(params[:id])
+    @book.quantity -= 1
+    @book.save
+
+    redirect_to @book
+  end
+
   def update
     resource.update(book_params)
     redirect_to(resource)
@@ -33,7 +41,7 @@ private
   end
 
   def book_params
-    params.require(:book).permit(:title, :author)
+    params.require(:book).permit(:title, :author, :quantity)
   end
 
 end

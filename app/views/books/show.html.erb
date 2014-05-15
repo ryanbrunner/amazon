@@ -1,6 +1,8 @@
 <p>Title: <%= @book.title %></p>
 <p>Author: <%= @book.author %></p>
+<p>Quantity Available: <%= @book.quantity %></p>
 
+<%= link_to "Buy it now!", purchase_book_path(@book), method: :post %>
 <%= link_to "Back to List", books_path %> |
 <%= link_to "Edit Book", edit_book_path(@book) %>
 
