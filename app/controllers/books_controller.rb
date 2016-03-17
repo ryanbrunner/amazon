@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   def show
     @book = resource
+    sleep 1
   end
 
   def edit
