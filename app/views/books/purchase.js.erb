@@ -1,0 +1,6 @@
+<% if @book.quantity <= 0 %>
+  $(".quantity").html("Sold out");
+  $(".purchase").hide();
+<% else %>
+  $(".quantity").html(<%= @book.quantity %>);
+<% end %>

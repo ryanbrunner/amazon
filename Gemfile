@@ -7,7 +7,7 @@ gem 'rails', '4.0.4'
 gem 'sqlite3'
 
 gem 'minitest-rails-capybara', group: :test
-
+ 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 

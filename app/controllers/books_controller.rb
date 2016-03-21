@@ -20,8 +20,10 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @book.quantity -= 1
     @book.save
-
-    redirect_to @book
+    
+    respond_to do |format|
+      format.html { render :show, layout: false }
+    end
   end
 
   def update

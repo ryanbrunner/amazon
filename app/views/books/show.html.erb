@@ -1,8 +1,22 @@
 <p>Title: <%= @book.title %></p>
 <p>Author: <%= @book.author %></p>
-<p>Quantity Available: <%= @book.quantity %></p>
+<p>Quantity Available: 
+    <span class='quantity'><%= @book.quantity %></span>
+</p>
 
-<%= link_to "Buy it now!", purchase_book_path(@book), method: :post, class: 'purchase' %>
+<%= link_to "Buy it now!", 
+            purchase_book_path(@book), 
+            remote: true, 
+            method: :post, 
+            class: 'purchase' %>
 <%= link_to "Back to List", books_path %> |
 <%= link_to "Edit Book", edit_book_path(@book) %>
 
+<script>
+
+    $(function() {
+       $("body").on("ajax:success", function(e, data) {
+         $(".view").html(data);
+       });
+    });
+</script>
