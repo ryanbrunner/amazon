@@ -26,6 +26,9 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     arel (4.0.2)
+    aws-sdk-v1 (1.63.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     builder (3.1.4)
     capybara (2.1.0)
       mime-types (>= 1.16)
@@ -33,6 +36,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.5)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -77,6 +84,11 @@ GEM
     multi_json (1.11.2)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    paperclip (4.2.0)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
     polyglot (0.3.5)
     rack (1.5.5)
     rack-test (0.6.3)
@@ -135,10 +147,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-sdk-v1
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
   minitest-rails-capybara
+  paperclip
   rails (= 4.0.4)
   sass-rails (~> 4.0.2)
   sdoc

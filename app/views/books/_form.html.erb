@@ -1,4 +1,6 @@
-<%= form_for book do |f| %>
+
+
+<%= form_for book, multipart: true do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
 
@@ -7,6 +9,9 @@
 
   <%= f.label :quantity %>
   <%= f.text_field :quantity %>
+
+  <%= f.label :cover %>
+  <%= f.text_field :cover, type: 'filepicker', 'data-fp-apikey' => "ArHkOyrXSpyYRo35YstVHz" %>
   
   <%= f.submit %>
 <% end %>

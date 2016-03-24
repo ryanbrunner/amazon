@@ -1,3 +1,8 @@
+
+<%# if @book.cover.present? %>
+    <%= image_tag @book.cover.url(:small), height: 100 %>
+<%# end %>
+
 <p>Title: <%= @book.title %></p>
 <p>Author: <%= @book.author %></p>
 <p>Quantity Available: 
@@ -14,9 +19,10 @@
 
 <script>
 
+
     $(function() {
-       $("body").on("ajax:success", function(e, data) {
-         $(".view").html(data);
+       $(".purchase").on("ajax:success", function(e, book) {
+         $(".quantity").html(book.quantity);
        });
     });
 </script>

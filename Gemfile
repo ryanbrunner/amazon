@@ -6,6 +6,11 @@ gem 'rails', '4.0.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
+gem 'paperclip'
+gem 'aws-sdk-v1'
+
+gem 'rails_12_factor'
+
 gem 'minitest-rails-capybara', group: :test
  
 # Use SCSS for stylesheets

@@ -22,7 +22,8 @@ class BooksController < ApplicationController
     @book.save
     
     respond_to do |format|
-      format.html { render :show, layout: false }
+      format.html
+      format.json { render json: @book }
     end
   end
 
@@ -44,7 +45,8 @@ private
   end
 
   def book_params
-    params.require(:book).permit(:title, :author, :quantity)
+    params.require(:book)
+          .permit(:title, :author, :quantity, :cover)
   end
 
 end
